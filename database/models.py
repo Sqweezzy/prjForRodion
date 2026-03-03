@@ -25,6 +25,7 @@ class Photos(Base):
     
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey('users.id'), nullable=False)
+    tags: Mapped[str] = mapped_column(String(255), nullable=True)
     file_path: Mapped[str] = mapped_column(String(255), nullable=False)
     file_name: Mapped[str] = mapped_column(String(255), nullable=False)
     size: Mapped[int] = mapped_column(String(255), nullable=False)
